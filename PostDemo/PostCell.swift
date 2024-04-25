@@ -9,9 +9,22 @@ import SwiftUI
 
 struct PostCell: View {
     let post: Post
+    
+    
+    
+    var bindingPost: Post {
+        userData.post(forid: post.id)!
+    }
+    
+    
+    @State var present : Bool = false
+    //绑定环境对象
+    @EnvironmentObject var userData : UserData
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10){
+        
+        var post = bindingPost
+        return VStack(alignment: .leading, spacing: 10){
             HStack(spacing: 5){
                 post.avatarImage
                     .resizable()
@@ -38,7 +51,8 @@ struct PostCell: View {
                 if !post.isFollowed {
                     Spacer()
                     Button(action: {
-                        print("click on follow button")
+                        post.isFollowed = true
+                        self.userData.update(post)
                     }, label: {
                         Text("Follow")
                             .font(.system(size: 14))
@@ -75,14 +89,31 @@ struct PostCell: View {
                 PostCellToolBarButton(image: "message",
                                       text: post.commentCountText,
                                       color: .black){
-                    print("Click on Comment")
+                    self.present = true
+                }.sheet(isPresented: $present){
+                    CommentInputView(post: post).environmentObject(self.userData)
                 }
                 
                 Spacer()
-                PostCellToolBarButton(image: "heart",
+                PostCellToolBarButton(image: post.isLiked ? "heart.fill" : "heart",
                                       text: post.likeCountText,
-                                      color: .red){
-                    print("Click on Like")
+                                      color: post.isLiked ? .red : .black){
+                    if post.isLiked {
+                        
+                        post.isLiked = false
+                        post.likeCount -= 1
+                        
+                    }else {
+                        
+                        
+                        post.isLiked = true
+                        post.likeCount += 1
+                        
+                        if post.likeCountText == "Like"{
+                            
+                        }
+                    }
+                    self.userData.update(post)
                 }
                 Spacer()
             }
@@ -98,5 +129,6 @@ struct PostCell: View {
 }
 
 #Preview {
-    PostCell(post: postList.list[0])
+    let userData = UserData()
+    return PostCell(post: userData.recommandList.list[0]).environmentObject(userData)
 }

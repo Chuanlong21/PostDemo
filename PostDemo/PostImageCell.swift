@@ -74,7 +74,9 @@ struct PostImageCellRow : View{
 
 #Preview {
     
-    let images = postList.list[0].images
+    let userData = UserData()
+    
+    let images = userData.recommandList.list[0].images
     let width = UIScreen.main.bounds.width - 30
 
     return PostImageCellRow(images: Array(images[0...0]), width: width)

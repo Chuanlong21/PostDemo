@@ -31,9 +31,11 @@ struct HomeView: View {
                     HomeNavigationBar(leftPercent: $leftPercent)
                 })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 #Preview {
-    HomeView()
+    //用过需要用环境对象的地方都要加上environmentObject
+    HomeView().environmentObject(UserData())
 }

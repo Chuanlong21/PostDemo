@@ -96,7 +96,6 @@
 		62A362FD2BD307E70067966E /* PostVIPBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A362FC2BD307E70067966E /* PostVIPBadge.swift */; };
 		62A362FF2BD30B1B0067966E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A362FE2BD30B1B0067966E /* Post.swift */; };
 		62A363012BD310C00067966E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363002BD310C00067966E /* PostCell.swift */; };
-		62A363032BD3118D0067966E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363022BD3118D0067966E /* ContentView.swift */; };
 		62A363052BD31EEC0067966E /* PostCellToolBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363042BD31EEC0067966E /* PostCellToolBarButton.swift */; };
 		62A363072BD3327C0067966E /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363062BD3327C0067966E /* PostListView.swift */; };
 		62A363092BD33E350067966E /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363082BD33E350067966E /* PostImageCell.swift */; };
@@ -105,6 +104,8 @@
 		62A363112BD7250B0067966E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363102BD7250B0067966E /* HomeView.swift */; };
 		62A363132BD72B910067966E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363122BD72B910067966E /* UserData.swift */; };
 		62A363152BD736DF0067966E /* HScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363142BD736DF0067966E /* HScrollViewController.swift */; };
+		62A363172BD838450067966E /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363162BD838450067966E /* CommentInputView.swift */; };
+		62A363192BD876D30067966E /* CommentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363182BD876D30067966E /* CommentTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,7 +199,6 @@
 		62A362FC2BD307E70067966E /* PostVIPBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVIPBadge.swift; sourceTree = "<group>"; };
 		62A362FE2BD30B1B0067966E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		62A363002BD310C00067966E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		62A363022BD3118D0067966E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62A363042BD31EEC0067966E /* PostCellToolBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellToolBarButton.swift; sourceTree = "<group>"; };
 		62A363062BD3327C0067966E /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		62A363082BD33E350067966E /* PostImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
@@ -207,6 +207,8 @@
 		62A363102BD7250B0067966E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		62A363122BD72B910067966E /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		62A363142BD736DF0067966E /* HScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollViewController.swift; sourceTree = "<group>"; };
+		62A363162BD838450067966E /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		62A363182BD876D30067966E /* CommentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,12 +242,13 @@
 			isa = PBXGroup;
 			children = (
 				6271D6C72BD2EF5000FF7576 /* PostDemoApp.swift */,
-				62A363022BD3118D0067966E /* ContentView.swift */,
 				62A363002BD310C00067966E /* PostCell.swift */,
+				62A363182BD876D30067966E /* CommentTextView.swift */,
 				62A363062BD3327C0067966E /* PostListView.swift */,
 				62A3630A2BD708880067966E /* PostDetailView.swift */,
 				62A3630C2BD70BAA0067966E /* HomeNavigationBar.swift */,
 				62A363102BD7250B0067966E /* HomeView.swift */,
+				62A363162BD838450067966E /* CommentInputView.swift */,
 				62A363142BD736DF0067966E /* HScrollViewController.swift */,
 				62A363122BD72B910067966E /* UserData.swift */,
 				62A363082BD33E350067966E /* PostImageCell.swift */,
@@ -510,9 +513,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A363172BD838450067966E /* CommentInputView.swift in Sources */,
+				62A363192BD876D30067966E /* CommentTextView.swift in Sources */,
 				62A3630B2BD708880067966E /* PostDetailView.swift in Sources */,
 				6271D6C82BD2EF5000FF7576 /* PostDemoApp.swift in Sources */,
-				62A363032BD3118D0067966E /* ContentView.swift in Sources */,
 				62A362FD2BD307E70067966E /* PostVIPBadge.swift in Sources */,
 				62A363052BD31EEC0067966E /* PostCellToolBarButton.swift in Sources */,
 				62A363112BD7250B0067966E /* HomeView.swift in Sources */,
@@ -661,8 +665,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -689,8 +693,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

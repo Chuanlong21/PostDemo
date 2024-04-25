@@ -11,7 +11,7 @@ import SwiftUI
 struct PostDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView().environmentObject(UserData())
         }
     }
 }
