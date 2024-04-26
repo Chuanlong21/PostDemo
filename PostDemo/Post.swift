@@ -30,6 +30,12 @@ struct Post : Codable, Identifiable{
   
 }
 
+extension Post : Equatable{
+    static func == (lhs: Self, rhs: Self) -> Bool{
+        return lhs.id == rhs.id
+    }
+}
+
 extension Post {
     //Calculated Prop
     

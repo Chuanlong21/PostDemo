@@ -106,6 +106,8 @@
 		62A363152BD736DF0067966E /* HScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363142BD736DF0067966E /* HScrollViewController.swift */; };
 		62A363172BD838450067966E /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363162BD838450067966E /* CommentInputView.swift */; };
 		62A363192BD876D30067966E /* CommentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363182BD876D30067966E /* CommentTextView.swift */; };
+		62A3631F2BDB3A280067966E /* BBSwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 62A3631E2BDB3A280067966E /* BBSwiftUIKit */; };
+		62A363212BDB3BBD0067966E /* OriginalButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A363202BDB3BBD0067966E /* OriginalButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +211,7 @@
 		62A363142BD736DF0067966E /* HScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollViewController.swift; sourceTree = "<group>"; };
 		62A363162BD838450067966E /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 		62A363182BD876D30067966E /* CommentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextView.swift; sourceTree = "<group>"; };
+		62A363202BDB3BBD0067966E /* OriginalButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A3631F2BDB3A280067966E /* BBSwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +249,7 @@
 				62A363002BD310C00067966E /* PostCell.swift */,
 				62A363182BD876D30067966E /* CommentTextView.swift */,
 				62A363062BD3327C0067966E /* PostListView.swift */,
+				62A363202BDB3BBD0067966E /* OriginalButtonStyle.swift */,
 				62A3630A2BD708880067966E /* PostDetailView.swift */,
 				62A3630C2BD70BAA0067966E /* HomeNavigationBar.swift */,
 				62A363102BD7250B0067966E /* HomeView.swift */,
@@ -376,6 +381,9 @@
 			dependencies = (
 			);
 			name = PostDemo;
+			packageProductDependencies = (
+				62A3631E2BDB3A280067966E /* BBSwiftUIKit */,
+			);
 			productName = PostDemo;
 			productReference = 6271D6C42BD2EF5000FF7576 /* PostDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -404,6 +412,9 @@
 				Base,
 			);
 			mainGroup = 6271D6BB2BD2EF5000FF7576;
+			packageReferences = (
+				62A3631D2BDB3A280067966E /* XCRemoteSwiftPackageReference "BBSwiftUIKit" */,
+			);
 			productRefGroup = 6271D6C52BD2EF5000FF7576 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -527,6 +538,7 @@
 				62A363012BD310C00067966E /* PostCell.swift in Sources */,
 				62A363072BD3327C0067966E /* PostListView.swift in Sources */,
 				62A363092BD33E350067966E /* PostImageCell.swift in Sources */,
+				62A363212BDB3BBD0067966E /* OriginalButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +742,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		62A3631D2BDB3A280067966E /* XCRemoteSwiftPackageReference "BBSwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Silence-GitHub/BBSwiftUIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		62A3631E2BDB3A280067966E /* BBSwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62A3631D2BDB3A280067966E /* XCRemoteSwiftPackageReference "BBSwiftUIKit" */;
+			productName = BBSwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6271D6BC2BD2EF5000FF7576 /* Project object */;
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import BBSwiftUIKit
 
 struct PostListView: View {
     let category : PostListCategory
@@ -14,24 +15,51 @@ struct PostListView: View {
     
     var body: some View {
          
-        List{
-            //只有post遵循identifiable的协议，id这个属性才能省略
-            ForEach(userData.postList(for: category).list){ post in
-                
-                //用来消除navigation的右滑小按钮
-                ZStack{
-                    PostCell(post: post)
-                    NavigationLink(destination: PostDetailView(post: post)){
-                        EmptyView()
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .opacity(0)  // 完全隐藏 NavigationLink
-                }
-               .listRowInsets(EdgeInsets())
-              
-                  
+        BBTableView(userData.postList(for: category).list){ post in
+            
+            NavigationLink(destination: PostDetailView(post: post)){
+                PostCell(post: post)
             }
-        }.listStyle(PlainListStyle()) 
+            .buttonStyle(OriginalButtonStyle())
+             
+        }
+        .bb_setupRefreshControl{ control in
+            control.attributedTitle = NSAttributedString(string: "Loading...")
+        }
+        .bb_pullDownToRefresh(isRefreshing: $userData.isRefresh){
+            print("Refresh")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                self.userData.isRefresh = false
+            }
+        }
+        .bb_pullUpToLoadMore(bottomSpace: 30){
+            if self.userData.isLoadingMore {return}
+            else {
+                self.userData.isLoadingMore = true
+            }
+            print("Load More")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                self.userData.isLoadingMore = false
+            }
+        }
+        .overlay(
+            Text(self.userData.loadingErrorText)
+            .bold()
+            .frame(width: 200)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundStyle(.white)
+                    .opacity(0.8)
+                
+            )
+//            .animation(nil)
+            .scaleEffect(self.userData.showLoadingError ? 1 : 0.5)
+            .animation(.spring(duration: 0.5), value: self.userData.showLoadingError)
+            .opacity(self.userData.showLoadingError ? 0.5 : 0)
+            .animation(.easeInOut, value: self.userData.showLoadingError)
+        )
             
         
     }
@@ -45,3 +73,4 @@ struct PostListView: View {
     }
     .environmentObject(UserData())
 }
+
