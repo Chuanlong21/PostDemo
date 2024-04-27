@@ -27,21 +27,10 @@ struct PostListView: View {
             control.attributedTitle = NSAttributedString(string: "Loading...")
         }
         .bb_pullDownToRefresh(isRefreshing: $userData.isRefresh){
-            print("Refresh")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                self.userData.isRefresh = false
-            }
+            self.userData.refreshPostList(for: self.category)
         }
         .bb_pullUpToLoadMore(bottomSpace: 30){
-            if self.userData.isLoadingMore {return}
-            else {
-                self.userData.isLoadingMore = true
-            }
-            print("Load More")
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                self.userData.isLoadingMore = false
-            }
+            self.userData.loadMorePostList(for: self.category)
         }
         .overlay(
             Text(self.userData.loadingErrorText)
